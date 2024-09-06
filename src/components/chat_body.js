@@ -34,7 +34,7 @@ function ChatBody(props) {
           alt="GptIcon"
         />
       </div>
-      <div className="grid grid-flow-row grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-flow-row grid-cols-2 lg:grid-cols-4 md:gap-4 gap-x-4 gap-y-2">
         {suggestions.map((suggestion) => {
           return (
             <div
@@ -42,7 +42,7 @@ function ChatBody(props) {
                 const value = suggestion.title;
                 updatePrompt(value);
               }}
-              className="shadow-sm hover:shadow border hover:border-gray-500 duration-500 rounded-2xl p-3 my-1 flex flex-col cursor-pointer"
+              className="shadow-sm hover:shadow border hover:border-gray-500 duration-500 rounded-2xl p-3 flex flex-col cursor-pointer"
             >
               {suggestion.icon}
               <p className="text-sm text-gray-800">{suggestion.title}</p>
