@@ -26,7 +26,7 @@ function ChatBody(props) {
     },
   ];
   return (
-    <div className="mx-auto lg:w-3/5 md:w-4/5">
+    <div className="mx-auto lg:w-3/5 md:w-4/5 overflow-hidden">
       <div className="flex justify-center mb-4">
         <img
           className="w-24"
