@@ -5,10 +5,8 @@ import { FaArrowCircleUp } from "react-icons/fa";
 function ChatInput(props) {
   const updatePrompt = props.updatePrompt;
   const prompt = props.prompt;
+  const sendMessage = props.sendMessage;
 
-  const sendMessage = () => {
-    console.log(prompt);
-  };
   const onInputChange = (e) => {
     const value = e.target.value;
     updatePrompt(value);
