@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const key = "Your-GEMINI-API-Key";
+const key = localStorage.getItem("GEMINI_API_KEY") ?? "YOU_API_KEY";
 
 const genAI = new GoogleGenerativeAI(key);
 
