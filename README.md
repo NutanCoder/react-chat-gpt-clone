@@ -9,3 +9,11 @@ You can try this at [this link](https://nutan-chat-gpt.netlify.app/)
 Here is screenshot of UI
 
 ![Screenshot](./chat-gpt-screenshot.png)
+
+## Features
+
+- Responsive
+- Open Source
+- React.js
+- Component based ui
+- Readable Code
