@@ -16,3 +16,11 @@
 .main-close {
   @apply flex flex-col justify-between p-2 w-full;
 }
+
+.message-left {
+  @apply bg-slate-100 border shadow-sm mb-4 p-2 rounded-md w-4/5 mr-auto;
+}
+
+.message-right {
+  @apply bg-slate-100 border shadow-sm mb-4 p-2 rounded-md w-3/5 ml-auto;
+}

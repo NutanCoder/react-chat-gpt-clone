@@ -4,6 +4,7 @@ import { CiImageOn } from "react-icons/ci";
 import { SlBulb } from "react-icons/sl";
 import { BiFoodMenu } from "react-icons/bi";
 import CustomMarkdown from "./custom_markdown";
+import Spinner from "./spinner";
 
 function ChatBody(props) {
   const updatePrompt = props.updatePrompt;
@@ -65,15 +66,25 @@ function ChatBody(props) {
       {messages.length != 0 && (
         <div className="m-4 mx-auto md:w-4/5 ">
           {messages.map((message) => {
-            return (
-              <div
-                className={`bg-slate-100 border shadow-sm mb-4 p-2 rounded-md ${
-                  message.who == "user" ? "w-3/5 ml-auto" : "w-4/5 mr-auto"
-                }`}
-              >
-                <CustomMarkdown markdown={message.text} />
-              </div>
-            );
+            if (message.who == "user") {
+              return (
+                <div className="message-right">
+                  <CustomMarkdown markdown={message.text} />
+                </div>
+              );
+            } else if (message.who == "ai") {
+              return (
+                <div className="message-left">
+                  <CustomMarkdown markdown={message.text} />
+                </div>
+              );
+            } else {
+              return (
+                <div className="message-left">
+                  <Spinner />
+                </div>
+              );
+            }
           })}
         </div>
       )}

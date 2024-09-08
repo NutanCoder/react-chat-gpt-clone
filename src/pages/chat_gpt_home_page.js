@@ -21,13 +21,36 @@ function ChatGptHomePage() {
   };
 
   const sendMessage = async () => {
-    setMessage((messages) => [...messages, { text: prompt, who: "user" }]);
-    const result = await model.generateContent(prompt);
+    const userInput = prompt;
+    clearPrompt();
+    addMessage({ text: userInput, who: "user" });
+    addMessage({ text: "", who: "spinner" });
+    const answer = await getAnswer(userInput);
+    removeSpinner();
+    addMessage({ text: answer, who: "ai" });
+  };
+
+  const getAnswer = async (input) => {
+    const result = await model.generateContent(input);
     const items = result.response.candidates;
     const texts = items.map((e) => e.content.parts[0].text).join(" \n");
+    return texts;
+  };
 
-    setMessage((messages) => [...messages, { text: texts, who: "ai" }]);
+  const clearPrompt = () => {
     setPrompt("");
+  };
+
+  const addMessage = (item) => {
+    setMessage((latest) => {
+      return [...latest, item];
+    });
+  };
+
+  const removeSpinner = () => {
+    setMessage((latest) => {
+      return latest.splice(-1);
+    });
   };
 
   return (

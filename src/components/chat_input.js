@@ -16,13 +16,14 @@ function ChatInput(props) {
     <div className="mx-auto lg:w-4/5 md:w-4/5 w-full">
       <div className="flex items-center bg-slate-100  py-3 px-4 rounded-3xl">
         <CgAttachment size="20" />
-        <input
+        <textarea
           type="text"
+          rows="1"
           value={prompt}
           onChange={onInputChange}
           placeholder="Message ChatGpt"
-          className="border w-full bg-transparent outline-none border-none px-2"
-        />
+          className="border w-full bg-transparent outline-none border-none px-2 resize-none"
+        ></textarea>
         <button type="button" onClick={sendMessage}>
           <FaArrowCircleUp size="20" />
         </button>

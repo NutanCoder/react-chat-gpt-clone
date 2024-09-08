@@ -7,6 +7,7 @@ function CustomMarkdown(props) {
   const markdown = props.markdown;
   return (
     <ReactMarkdown
+      className="prose"
       components={{
         code({ node, inline, className, children, ...props }) {
           const match = /language-(\w+)/.exec(className || "");
